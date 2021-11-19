@@ -6,10 +6,8 @@
 }
 
 body {
-  background-color: red;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: blue;
   font-weight: bold;
 }
 
@@ -474,3 +472,22 @@ main::-webkit-scrollbar {
 #audio .barra .current i.fa-circle {
   margin-top: -3px;
 }
+
+/* BONUS: Tasto upgrade scompare in altezza */
+@media screen and (max-height: 300px) {
+  #upgrade {
+    display: none;
+  }
+
+  #home {
+    margin-top: 20px;
+  }
+}
+
+/* Tablet - Width 481px — 768px
+@media screen and (min-width: 481px) {
+  main {
+    background-color: #FFF;
+  }
+} */
+
