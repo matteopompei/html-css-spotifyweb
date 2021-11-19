@@ -110,9 +110,13 @@ header .user .avatar {
 }
 
 /* MAIN */
-main {
+
+main, #upgrade {
   min-width: 410px;
   width: calc(100% - 50px);
+}
+
+main {
   background-color: #141922;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -127,8 +131,6 @@ main::-webkit-scrollbar {
 #upgrade {
   position: fixed;
   top: 0;
-  right: 0;
-  width: calc(100% - 50px);
   padding: 20px 10px;
   display: flex;
   flex-direction: row-reverse;
@@ -208,15 +210,15 @@ main::-webkit-scrollbar {
 
 #home .row > div {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 30px;
 }
 
 #home .row > div a {
   display: block;
-  width: 180px;
+  height: 100%;
+  width: 45%;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -249,8 +251,12 @@ main::-webkit-scrollbar {
 
 /* Cover */
 #home .cover {
-  height: 180px;
-  background-size: contain;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   margin-bottom: 20px;
 }
 
@@ -467,7 +473,7 @@ main::-webkit-scrollbar {
 #audio .barra {
   margin: 2px 0;
   display: inline-block;
-  width: 100px;
+  width: 70px;
 }
 
 #audio .barra .current {
@@ -490,9 +496,11 @@ main::-webkit-scrollbar {
 }
 
 /* Tablet */
-@media screen and (min-width: 545px) {
+@media screen and (min-width: 550px) {
+
+  /* HEADER */
   header {
-    width: 300px;
+    width: 200px;
     padding: 20px;
     text-align: left;
   }
@@ -601,4 +609,75 @@ main::-webkit-scrollbar {
     margin-right: 10px;
   }
 
+  /* MAIN */
+
+  main, #upgrade {
+    min-width: 0;
+    width: calc(100% - 200px);
+  }
+
+  #home .row {
+    margin: auto 3%;
+  }
+  
+  #home .row > div {
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  #home .row > div a {
+    width: 100%;
+    /* min-width: 180px; */
+    max-width: 250px;
+  }
+
+  #home .row > div a .titolo, #home .row > div a .sottotitolo {
+    margin: 10px auto;
+  }
+  
+  #home .cover {
+    margin: 0 auto 20px auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* PLAYER */
+  #player .controlli-center .timer {
+    width: 120%;
+  }
+
+  #audio .barra {
+    width: 100px;
+  }
+}
+
+/* Desktop medi */
+@media screen and (min-width: 900px) {
+
+  /* Cover */
+  #home .row > div {
+    gap: 25px;
+  }
+
+  #home .row > div a {
+  }
+
+  /* Player */
+  #player .song > div:nth-child(3) {
+    margin-left: 20px;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* Desktop medi */
+@media screen and (min-width: 1200px) {
+
+  /* Cover */
+  #home .row > div a {
+
+  }
 }
