@@ -8,11 +8,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: bold;
 }
 
 a {
   text-decoration: none;
+  font-weight: bold;
 }
 
 #main-container {
@@ -21,7 +21,7 @@ a {
   overflow: hidden;
 }
 
-/* Smartphone - Width 480px */
+/* Smartphone */
 
 /* HEADER LATERALE */
 header {
@@ -42,7 +42,7 @@ header a:hover {
   color: #FFF;
 }
 
-header span, #logo {
+header span, #logo, header .playlist, header h5 {
   display: none;
 }
 
@@ -59,8 +59,16 @@ header .main-menu .icon:hover {
   filter: brightness(100%);
 }
 
-header .main-menu .active {
+header .main-menu .active .icon {
   filter: brightness(75%);
+}
+
+header .main-menu a.active {
+  color: #BFBFBF;
+}
+
+header .main-menu a.active:hover {
+  color: #FFF;
 }
 
 header .main-menu .home {
@@ -73,10 +81,6 @@ header .main-menu .search {
 
 header .main-menu .libreria {
   background: url(../img/libreria.svg) no-repeat center;
-}
-
-header .playlist {
-  display: none;
 }
 
 header .download {
@@ -107,7 +111,8 @@ header .user .avatar {
 
 /* MAIN */
 main {
-  width: 100%;
+  min-width: 410px;
+  width: calc(100% - 50px);
   background-color: #141922;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -403,7 +408,7 @@ main::-webkit-scrollbar {
   align-items: center;
   gap: 10px;
   flex-grow: 2;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #player .controlli-center div {
@@ -484,10 +489,116 @@ main::-webkit-scrollbar {
   }
 }
 
-/* Tablet - Width 481px — 768px
-@media screen and (min-width: 481px) {
-  main {
-    background-color: #FFF;
+/* Tablet */
+@media screen and (min-width: 545px) {
+  header {
+    width: 300px;
+    padding: 20px;
+    text-align: left;
   }
-} */
 
+  header #logo {
+    display: block;
+    height: 45px;
+    margin-bottom: 20px;
+  }
+
+  #logo-small {
+    display: none;
+  }
+
+  header span {
+    display: inline-block;
+  }
+
+  header .main-menu {
+    margin-bottom: 30px;
+  }
+
+  header .main-menu li {
+    margin: 10px 0;
+  }
+
+  header .main-menu .active {
+    border-left: 3px solid #0F0;
+    margin-left: -20px;
+    padding-left: 20px;
+  }
+
+  header .main-menu a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  header .main-menu .icon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  header .main-menu a:hover .icon {
+    filter: brightness(100%);
+  }
+
+  header h5 {
+    display: block;
+    font-size: 0.9rem;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  header .playlist {
+    display: block;
+  }
+
+  header .playlist a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  header .playlist li {
+    margin: 15px 0;
+  }
+
+  header .playlist .fa-plus-square {
+    display: inline-block;
+    font-size: 3rem;
+    margin-right: 10px;
+  }
+
+  header .download a {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  header .download i {
+    margin-right: 10px;
+  }
+
+  header .user {
+    border-top: 1px solid #717171;
+    padding-top: 15px;
+  }
+
+  header .user a {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 1.1rem;
+  }
+
+  header .avatar {
+    margin-right: 10px;
+  }
+
+}
